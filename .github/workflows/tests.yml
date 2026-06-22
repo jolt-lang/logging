@@ -13,6 +13,6 @@ jobs:
             sudo chmod +x /usr/local/bin/chez
           fi
       - name: Get jolt
-        run: git clone --depth 1 https://github.com/jolt-lang/jolt.git "$HOME/jolt"
+        run: git clone --depth 1 --recurse-submodules https://github.com/jolt-lang/jolt.git "$HOME/jolt"
       - name: Test
         run: JOLT_PWD="$PWD" "$HOME/jolt/bin/joltc" -M:test
