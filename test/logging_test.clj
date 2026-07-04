@@ -21,6 +21,6 @@
   (check "impl factory name"  "jolt/stderr" (impl/name (impl/find-factory)))
   (check "*tx-agent-levels*"  #{:info :warn} log/*tx-agent-levels*)
   (check "log-capture! present" true (fn? log/log-capture!))
-  (check "spyf present"       true  (boolean (resolve 'log/spyf)))
+  (check "spyf present"       true  (boolean (ns-resolve 'clojure.tools.logging 'spyf)))
   (println (str "\n" (if (zero? @failures) "all passed" (str @failures " FAILED"))))
   (when (pos? @failures) (throw (ex-info "test failures" {:n @failures}))))
