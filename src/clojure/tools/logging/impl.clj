@@ -35,9 +35,10 @@
     (enabled? [_ level]
       (>= (get level-order level 2) (get level-order *level* 2)))
     (write! [_ level throwable message]
+      ;; __eprint is a raw print seam (no newline of its own)
       (__eprint
         (str (level-str level) " " logger-ns " - " message
-             (when throwable (str " " throwable)))))))
+             (when throwable (str " " throwable)) "\n")))))
 
 (def ^:private jolt-stderr-factory
   (reify LoggerFactory
