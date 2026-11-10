@@ -21,5 +21,5 @@ Pull it from git in a `deps.edn`:
 ## Test
 
 ```bash
-joltc -M:test     # needs joltc (jolt-lang/jolt) on PATH
+jolt -M:test      # needs jolt (jolt-lang/jolt) on PATH
 ```
