@@ -5,7 +5,8 @@
 ;; native stderr-backed factory instead. The Logger and LoggerFactory protocols
 ;; match the real signatures, so consumers (and any custom factory bound through
 ;; clojure.tools.logging/*logger-factory*) work unchanged.
-(ns clojure.tools.logging.impl)
+(ns clojure.tools.logging.impl
+  (:refer-clojure :exclude [name]))
 
 (defprotocol Logger
   (enabled? [logger level])
